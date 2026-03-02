@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    label {
+        width: 20%;
+        display: inline-block;
+    }
+</style>
+<body>
+    <form method="POST" action="/submit">
+        <label for="nom">Entrer votre Nom :</label><br>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="prenom">Entrer votre Prenom :</label><br>
+        <input type="text" id="prenom" name="prenom" required><br>
+        
+        <label for="list deroulantes"><h3>Les listes deroulantes</h3></label><br>
+        <label for="list">Votre niveau de communication :</label>
+        <select id="list" name="list">
+            <option value="option1">Excellent</option>
+            <option value="option2">Bien</option>
+            <option value="option3">Moyen</option>
+            <option value="option4">Mauvais</option>
+        </select><br>
+        <label for="cases"><h4>Les cases a cocher</h4></label><br>
+        <label for="case1">Sport</label>
+        <input type="checkbox" id="case1" name="case1" value="Sport"><br>
+        <label for="case2">Explorer internet</label>
+        <input type="checkbox" id="case2" name="case2" value="Explorer internet"><br>
+        <label for="case3">Lecture </label>
+        <input type="checkbox" id="case3" name="case3" value="Lecture"><br>
+        <label for="case4">Musique </label>
+        <input type="checkbox" id="case4" name="case4" value="Musique"><br>
+
+        <lable for="radio"><h4>Les boutons radio</h4></lable><br>
+        <label for="title"> Quel est votre niveau en HTML :</label><br>
+        <input type="radio" id="option1" name="options" value="option">
+        <label for="case1">Excellent</label>
+        <input type="radio" id="option2" name="options" value="option">
+        <label for="case2">Moyen</label>
+        <input type="radio" id="option3" name="options" value="option">
+        <label for="case3">Debutant</label><br>
+
+
+
+
+        
+        <button type="submit" >Envoyer</button>
+        <button type="reset">Annuler</button>
+
+    </form>
+</body>
+</html>
