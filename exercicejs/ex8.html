@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let valeurMax = parseInt(prompt("Entrez une valeur limite : "));
+        
+        let u0 = 0;
+        let u1 = 1;
+        let un = 1;
+        let rang = 1; 
+
+        while (un <= valeurMax) {
+            un = u0 + u1;
+            u0 = u1;
+            u1 = un;
+            rang = rang + 1; 
+        }
+
+        alert("Le premier terme supérieur à " + valeurMax + " est " + un + " (il est au rang " + rang + ")");
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<body>
+    <script>
+        let a = parseFloat(prompt("1er nombre : "));
+        let b = parseFloat(prompt("2ème nombre : "));
+        let c = parseFloat(prompt("3ème nombre : "));
+        let temp;
+
+        if (a > b) {
+            temp = a; 
+            a = b; 
+            b = temp;
+        }
+        if (b > c) {
+            temp = b; 
+            b = c; 
+            c = temp;
+        }
+        if (a > b) {
+            temp = a; 
+            a = b; 
+            b = temp;
+        }
+
+        alert("les nombres dans l'ordre croissant : " + a + " " + b + " " + c);
+    </script>
+</body>
+</html>

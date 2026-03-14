@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let n = parseInt(prompt("donnez taille du motif : "));
+        let resultat = "";
+
+        for (let i = 1; i <= n; i = i + 1) {
+            for (let j = 1; j <= n - i; j = j + 1) {
+                resultat = resultat + " ";
+            }
+            for (let k = 1; k <= (2 * i - 1); k = k + 1) {
+                resultat = resultat + "*";
+            }
+            resultat = resultat + "\n";
+        }
+        
+        alert(resultat);
+    </script>
+</body>
+</html>

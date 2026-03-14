@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let sec = parseInt(prompt("Une durée en secondes : "));
+        
+        let j = parseInt(sec / 86400);
+        sec = sec % 86400; 
+        
+        let h = parseInt(sec / 3600);
+        sec = sec % 3600;
+        
+        let m = parseInt(sec / 60);
+        let s = sec % 60;
+
+        let resultat = "Cette durée équivaut à";
+
+        if (j > 0) {
+            resultat = resultat + " " + j + " jour";
+            if (j > 1) { resultat = resultat + "s"; } 
+        }
+        if (h > 0) {
+            resultat = resultat + " " + h + " heure";
+            if (h > 1) { resultat = resultat + "s"; }
+        }
+        if (m > 0) {
+            resultat = resultat + " " + m + " minute";
+            if (m > 1) { resultat = resultat + "s"; }
+        }
+        if (s > 0) {
+            resultat = resultat + " " + s + " seconde";
+            if (s > 1) { resultat = resultat + "s"; }
+        }
+
+        alert(resultat);
+    </script>
+</body>
+</html>

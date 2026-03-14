@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        let n = parseInt(prompt("Un motif de taille : "));
+        let resultat = "";
+        let i = 1;
+
+        while (i <= n) {
+            let j = 1;
+            while (j <= i) {
+                resultat = resultat + "*";
+                j = j + 1;
+            }
+            resultat = resultat + "\n"; 
+            i = i + 1;
+        }
+        
+        alert(resultat);
+    </script>
+</body>
+</html>
