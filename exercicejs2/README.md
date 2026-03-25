@@ -40,8 +40,6 @@ Une calculatrice minimaliste à deux champs de saisie.
 - Opérations : `+`, `-`, `*`, `/`
 - Protection contre la division par zéro
 
-> ⚠️ **Bug connu :** Les valeurs sont lues comme des **chaînes de caractères** (pas de `parseFloat`), ce qui cause une concaténation au lieu d'addition pour l'opérateur `+`.
-
 **Technologies :** HTML, JavaScript  
 **Lancer :** Ouvrir `Calculatrice-Simple.html` dans un navigateur
 
@@ -79,19 +77,6 @@ Un utilitaire simple pour échanger le contenu de deux champs texte.
 
 ---
 
-## 🚀 Utilisation
-
-Aucune installation requise. Il suffit d'ouvrir le fichier `.html` souhaité directement dans un navigateur moderne (Chrome, Firefox, Edge...).
-
-```bash
-# Exemple sous Linux/macOS
-open IMC.html
-# ou
-xdg-open IMC.html
-```
-
----
-
 ## 🛠️ Technologies utilisées
 
 | Technologie | Usage |
@@ -105,5 +90,3 @@ xdg-open IMC.html
 ## 📌 Notes
 
 - Tous les projets sont **autonomes** (un seul fichier par projet).
-- Aucun framework ni bibliothèque externe n'est utilisé.
-- Compatibles avec tous les navigateurs modernes.
