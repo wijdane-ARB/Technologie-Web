@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3 : Calculateur d'IMC</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #1a73e8;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; 
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #1557b0;
+        }
+
+        #resultat {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .info { background-color: #e8f0fe; color: #1a73e8; }
+        .success { background-color: #e6f4ea; color: #1e8e3e; }
+        .warning { background-color: #fef7e0; color: #f9ab00; }
+        .danger { background-color: #fce8e6; color: #d93025; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Calculateur d'IMC</h1>
+        
+        <div class="input-group">
+            <label for="poids">Poids (kg) :</label>
+            <input type="number" id="poids" placeholder="Ex: 76" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label for="taille">Taille (m) :</label>
+            <input type="number" id="taille" placeholder="Ex: 1.75" step="0.01">
+        </div>
+
+        <button onclick="calculerIMC()">Calculer</button>
+
+        <div id="resultat"></div>
+    </div>
+
+
+
+    <script>
+        function calculerIMC() {
+            const poids = parseFloat(document.getElementById('poids').value);
+            const taille = parseFloat(document.getElementById('taille').value);
+            const display = document.getElementById('resultat');
+
+            
+            if (!poids || !taille || taille <= 0) {
+                display.innerHTML = "Veuillez saisir des valeurs valides.";
+                display.className = "danger";
+                return;
+            }
+
+            
+            const imc = poids / (taille * taille);
+            const imcFixe = imc.toFixed(2);
+            
+            let message = "";
+            let cssClass = "";
+
+            if (imc < 18.5) {
+                message = "Insuffisance pondérale (maigreur)";
+                cssClass = "warning";
+            } else if (imc < 25) {
+                message = "Corpulence normale";
+                cssClass = "success";
+            } else if (imc < 30) {
+                message = "Surpoids";
+                cssClass = "warning";
+            } else if (imc < 35) {
+                message = "Obésité modérée";
+                cssClass = "danger";
+            } else if (imc < 40) {
+                message = "Obésité sévère";
+                cssClass = "danger";
+            } else {
+                message = "Obésité morbide ou massive";
+                cssClass = "danger";
+            }
+
+            display.className = cssClass;
+            display.innerHTML = `Votre IMC est de <strong>${imcFixe}</strong>.<br>Vous êtes en état de ${message.toLowerCase()}.`;
+        }
+    </script>
+
+</body>
+</html>

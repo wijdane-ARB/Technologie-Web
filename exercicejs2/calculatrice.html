@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice 4 - Calculatrice</title>
+    <style>
+        .calculatrice {
+            width: 240px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        #ecran {
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        .touches {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 5px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #999;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .egal {
+            background-color: #4CAF50;
+            color: white;
+            grid-column: span 2;
+        }
+
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Calculatrice Scientifique</h2>
+
+    <div class="calculatrice">
+        <input type="text" id="ecran" readonly>
+
+        <div class="touches">
+            <button onclick="ajouter('7')">7</button>
+            <button onclick="ajouter('8')">8</button>
+            <button onclick="ajouter('9')">9</button>
+            <button onclick="ajouter('/')">/</button>
+
+            <button onclick="ajouter('4')">4</button>
+            <button onclick="ajouter('5')">5</button>
+            <button onclick="ajouter('6')">6</button>
+            <button onclick="ajouter('*')">*</button>
+
+            <button onclick="ajouter('1')">1</button>
+            <button onclick="ajouter('2')">2</button>
+            <button onclick="ajouter('3')">3</button>
+            <button onclick="ajouter('-')">-</button>
+
+            <button onclick="ajouter('0')">0</button>
+            <button onclick="ajouter('.')">.</button>
+            <button class="clear" onclick="effacer()">C</button>
+            <button onclick="ajouter('+')">+</button>
+
+            <button onclick="calculerRacine()">√</button>
+            <button onclick="ajouter('**2')">x²</button>
+            <button class="egal" onclick="calculer()">=</button>
+        </div>
+    </div>
+
+    
+
+    <script>
+        var ecran = document.getElementById("ecran");
+
+        function ajouter(caractere) {
+            ecran.value = ecran.value + caractere;
+        }
+
+        function effacer() {
+            ecran.value = "";
+        }
+
+        function calculer() {
+            try {
+                ecran.value = eval(ecran.value);
+            } catch (err) {
+                ecran.value = "Erreur";
+            }
+        }
+
+        function calculerRacine() {
+            var resultat = Math.sqrt(ecran.value);
+            ecran.value = resultat;
+        }
+    </script>
+
+</body>
+</html>

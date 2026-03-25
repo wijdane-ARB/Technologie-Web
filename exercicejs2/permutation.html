@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="text" id="zone1" placeholder="Texte A"><br>
+    <input type="text" id="zone2" placeholder="Texte B"><br>
+    <button onclick="permuter()">Permuter</button><br>
+
+    <script>
+        function permuter() {
+            let input1 = document.getElementById("zone1");
+            let input2 = document.getElementById("zone2");
+
+            let temp = input1.value;
+            input1.value = input2.value;
+            input2.value = temp;
+        }
+    </script>
+</body>
+</html>
